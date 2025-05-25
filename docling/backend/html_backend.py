@@ -83,14 +83,7 @@ class AnnotatedTextList(list):
         hyperlink = self[0].hyperlink
         for i in range(1, len(self)):
             if hyperlink == self[i].hyperlink:
-                sep = ""
-                if (
-                    text
-                    and re.match(r"\w", text[-1])
-                    and self[i].text
-                    and re.match(r"\w", self[i].text[0])
-                ):
-                    sep = " "
+                sep = " "
                 text += sep + self[i].text
             else:
                 simplified.append(AnnotatedText(text=text, hyperlink=hyperlink))
