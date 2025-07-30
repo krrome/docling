@@ -551,7 +551,7 @@ class HTMLDocumentBackend(DeclarativeDocumentBackend):
 
         elif tag_name in {"p", "address", "summary"}:
             text_list = self._extract_text_and_hyperlink_recursively(
-                tag, find_parent_annotation=True, keep_newlines=True
+                tag, find_parent_annotation=True
             )
             annotated_texts = text_list.simplify_text_elements()
             for part in annotated_texts.split_by_newline():
